@@ -1,0 +1,20 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+
+Debug
+.vs
+x64
+
+Engine/Cache
+*.opensdf
+*.sdf
+
+export
+res
