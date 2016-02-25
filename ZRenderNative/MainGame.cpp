@@ -106,6 +106,7 @@ void MainGame::drawGame() {
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glVertex2f(0, 0);
 	glVertex2f(0, 500);
+	 
 	glVertex2f(500, 500);
 	glEnd();
 
