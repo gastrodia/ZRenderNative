@@ -1,5 +1,5 @@
 #include "Vector2.h"
-
+#include <iostream>
 
 
 Vector2::Vector2(float x,float y)
@@ -47,26 +47,47 @@ Vector2& Vector2::setY(float y) {
 }
 
 void Vector2::setComponent(int index, float val) {
-
+	switch (index) {
+		case 0: this->x = val; break;
+		case 1: this->y = val; break;
+		default: std::cout << "index is out of range: " << index << std::endl;
+	}
 };
-void Vector2::getComponent(int index) {
-
+float Vector2::getComponent(int index) {
+	float returnVal = 0;
+	switch (index) {
+	case 0: returnVal = this->x; break;
+	case 1: returnVal = this->y; break;
+	default: std::cout << "index is out of range: " << index << std::endl;
+	}
+	return returnVal;
 };
 Vector2& Vector2::clone() {
-
+	return Vector2(this->x, this->y);
 };
-Vector2& Vector2::copy() {
-
+Vector2& Vector2::copy(Vector2 v) {
+	this->x = v.x;
+	this->y = v.y;
+	return *this;
 };
-Vector2& Vector2::add() {
-
+Vector2& Vector2::add(Vector2 v) {
+	this->x = v.x;
+	this->y = v.y;
+	return *this;
 };
 Vector2& Vector2::addScalar(float s) {
-
+	this->x += s;
+	this->y += s;
+	return *this;
 };
 Vector2& Vector2::addVectors(Vector2 a, Vector2 b) {
-
+	this->x = a.x + b.x;
+	this->y = a.y + b.y;
+	return *this;
 };
-Vector2& Vector2::addScaleVector(Vector2 v, float s) {
-
+Vector2& Vector2::addScaledVector(Vector2 v, float s) {
+	this->x += v.x * s;
+	this->y += v.y * s;
+	return *this;
 };
+

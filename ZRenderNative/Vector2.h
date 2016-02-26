@@ -18,13 +18,14 @@ public:
 	Vector2& setY(float y);
 
 	void setComponent(int index, float val);
-	void getComponent(int index);
+	float getComponent(int index);
 	Vector2& clone();
-	Vector2& copy();
-	Vector2& add();
+	Vector2& copy(Vector2 v);
+	Vector2& add(Vector2 v);
 	Vector2& addScalar(float s);
 	Vector2& addVectors(Vector2 a, Vector2 b);
-	Vector2& addScaleVector(Vector2 v, float s);
+	Vector2& addScaledVector(Vector2 v, float s);
+	Vector2& sub(Vector2 v);
 
 };
 
